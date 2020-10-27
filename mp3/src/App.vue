@@ -1,19 +1,32 @@
 <template>
-  <div id="app">
-    <HelloWorld/>
+  <div class="home">
+    <HelloWorld />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-  name: 'App',
+  name: 'Home',
   components: {
     HelloWorld
+  },
+  data: function () {
+    return {
+    }
+  },
+  computed: {},
+  watch: {},
+  methods: {
+  },
+  async beforeMount () {
   }
 }
 </script>
 
 <style>
+body{
+  background-color: #5580a3;
+}
 </style>
