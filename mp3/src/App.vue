@@ -1,16 +1,19 @@
 <template>
   <div class="home">
-    <HelloWorld />
+    <Header />
+    <MainStr />
   </div>
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld.vue'
+import MainStr from '@/components/MainStr.vue'
+import Header from '@/components/Header.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    MainStr,
+    Header
   },
   data: function () {
     return {
@@ -27,6 +30,8 @@ export default {
 
 <style>
 body{
-  background-color: #5580a3;
+  background-color: #c0e3ff;
+  margin:0;
+  padding:0;
 }
 </style>

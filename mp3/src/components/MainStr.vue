@@ -1,6 +1,5 @@
 <template>
 <div>
-  ko
 </div>
 
 </template>
@@ -8,7 +7,7 @@
 <script>
 
 export default {
-  name: 'HelloWorld',
+  name: 'MainStr',
   props: {
   },
   data: function () {
