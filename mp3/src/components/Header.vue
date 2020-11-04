@@ -29,12 +29,12 @@ export default {
 
 <style scoped>
 .header{
-  height:50px;
+  height:8vh;
   background-color: aqua ;
 }
 .logo{
   margin-left: 5vw;
-  height: 50px;
+  height: 8vh;
   float: left;
 }
 .buttons{
@@ -45,7 +45,7 @@ export default {
 .but{
   font-size: 210%;
   margin-left: 11vw;
-  padding:6px;
+  padding:1vh;
   color: #5f6bff;
 }
 .but:hover{
