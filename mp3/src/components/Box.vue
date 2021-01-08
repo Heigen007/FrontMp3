@@ -21,23 +21,20 @@ export default {
     return {
       data: null,
       answer: 0,
-      questionName: null
+      questionName: null,
+      number: 2
     }
   },
   methods: {
     click (a) {
       this.answer = a;
+      this.finish()
     },
-    changeQuestion (a) {
+    changeQuestion () {
       this.data = json.answers
-      var random = Math.floor(Math.random() * Math.floor(5) + 1)
-      console.log(a)
-      console.log(random)
-      if (a == random) {
-        this.changeQuestion(a)
-      } else if (random == 1) {
-        this.questionName = json.answers.question1
-      } else if (random == 2){
+      var random = this.number
+      this.number = this.number + 1
+      if (random == 2){
         this.questionName = json.answers.question2
       } else if (random == 3){
         this.questionName = json.answers.question3
@@ -47,8 +44,17 @@ export default {
         this.questionName = json.answers.question5
       } else if (random == 6){
         this.questionName = json.answers.question6
+      } else if (random == 7){
+        this.questionName = json.answers.question7
+      } else if (random == 8){
+        this.finish()
       }
-      console.log(this.questionName);
+    },
+    finish () {
+      document.getElementById('12').classList.add('finish');
+      document.querySelector('.cube').style.transform = 
+        'rotateY(' + 1000 + 'deg)';
+      this.$emit('str', 3)
     },
     answerV (ans) { 
 
@@ -68,7 +74,7 @@ export default {
       var self = this;
 
       setTimeout(function() {
-        self.changeQuestion(self.questionName.number)
+        self.changeQuestion()
       }, 1500);
 
     } else {
@@ -83,18 +89,16 @@ export default {
       setTimeout(() => {
       box.style.transform = 'translateX(' + 0 + 'px)';
       },800);
-      this.$emit('str', 0)
-      self = this;
 
+      self = this;
       setTimeout(function() {
-        self.changeQuestion(self.questionName.number)
+        self.changeQuestion()
       }, 1300);
 
     }
     }
   },
   beforeMount() {
-
     var rotateY = 0;
     var rotateX = 0;
     document.onkeydown = function (e) {
@@ -148,6 +152,7 @@ button{
 }
 .container {
  margin: 100px auto;
+ clip-path: circle(100vw at 50% 50%);
  width: 300px;
  height: 300px;
  perspective: 700px;
@@ -157,6 +162,9 @@ button{
   position: absolute;
   left: 40vw;
   top: 30vh;
+}
+.container.finish {
+  clip-path: circle(0 at 50% 50%);
 }
 b{
   font-size: 20px

@@ -2,10 +2,10 @@
 <div class = "main">
     <div id="large-header" class="large-header">
     <canvas id="demo-canvas"></canvas>
-        <h1 class="main-title">Кол-во правильных ответов: {{strV}}</h1>
+      <h1 class="main-title">Кол-во правильных ответов: {{strV}}</h1>
+      <div class="main-title2" id = '2'>{{string}}</div>
     </div>
-    <box @str = "str"/>
-    <div class="ball" id = "1"></div>
+    <box class = "boxx" id = "12" @str = "str"/>
 </div>
 </template>
 
@@ -23,19 +23,55 @@ export default {
   },
   data: function () {
     return {
-      strV: 0
+      strV: 0,
+      string: "Привет Друг :)"
     }
   },
   methods: {
       str(a) {
-        if (a == 0) {
-          this.strV = 0;
-        } else if (a == 1) {
+        if (a == 1) {
           this.strV += 1;
+        } else if (a == 3) {
+            this.animate()
         }
+      },
+      animate() { 
+        var self = this
+        setTimeout(function() {
+          var element = document.getElementById('2')
+          element.style.fontSize = "500vw"
+        }, 1000);
+
+        setTimeout(function() {
+          var element = document.getElementById('2')
+          element.style.transition = 'none'
+          self.string = "Сыграем в игру?"
+          element.style.fontSize = "1px"
+          setTimeout(function() {
+            element.style.transition = 'all 10s ease-in'
+            element.style.fontSize = "500vw"
+          }, 150);
+        }, 5000);
+
+        setTimeout(function() {
+          var element = document.getElementById('2')
+          element.style.transition = 'none'
+          self.string = "Начали...."
+          element.style.fontSize = "1px"
+          setTimeout(function() {
+            element.style.transition = 'all 10s ease-in'
+            element.style.fontSize = "500vw"
+          }, 150);
+        }, 9000);
+
+        document.getElementById('2').style.display = 'block'
+        setTimeout(function() {
+        document.getElementById('12').style.display = 'block'
+        }, 15000);
       }
   },
   mounted() {
+    this.animate()
       window.onload = init;
     function init() {
     var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
@@ -236,7 +272,9 @@ export default {
     height: 4px; /* высота для горизонтального скролла */
     background-color: #063949;
 }
-
+.boxx {
+  display: none;
+}
 /* ползунок скроллбара */
 ::-webkit-scrollbar-thumb {
     background-color: #687275;
@@ -245,14 +283,13 @@ export default {
 
 /* Header */
 .large-header {
-    z-index: 0;
+  z-index: 0;
 	position: relative;
 	width: 100%;
 	background: #333;
 	overflow: hidden;
 	background-size: cover;
 	background-position: center center;
-	z-index: 1;
 }
 
 .main-title {
@@ -265,14 +302,24 @@ export default {
 	left: 50%;
 	-webkit-transform: translate3d(-50%,-50%,0);
 	transform: translate3d(-50%,-50%,0);
-}
-
-.main-title {
-	text-transform: uppercase;
+  text-transform: uppercase;
 	font-size: 30px;
 	letter-spacing: 0.1em;
 }
 
+.main-title2 {
+	position: absolute;
+  transition: all 10s ease-in;
+	color: #f9f1e9;
+	text-align: center;
+	top: 50%;
+  display: none;
+	left: 50%;
+	transform: translate3d(-50%,-50%,0);
+  text-transform: uppercase;
+	font-size: 30px;
+	letter-spacing: 0.1em;
+}
 @media only screen and (max-width : 768px) {
 	.demo-1 .main-title {
 		font-size: 3em;

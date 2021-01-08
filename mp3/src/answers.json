@@ -2,21 +2,21 @@
   "answers": {
     "question1": {
       "number": "1",
-      "question": "1",
-      "first_a": "11",
-      "sec_a": "12",
-      "third_a": "13",
-      "forth_a": "14",
+      "question": "Hi?",
+      "first_a": "Hi",
+      "sec_a": "hi",
+      "third_a": "hI",
+      "forth_a": ":)",
       "class": "front",
       "answer": "1"
     },
     "question2": {
       "number": "2",
-      "question": "2",
-      "first_a": "21",
-      "sec_a": "22",
-      "third_a": "23",
-      "forth_a": "24",
+      "question": "Name my",
+      "first_a": "Grig",
+      "sec_a": "Hejgen",
+      "third_a": "Heige",
+      "forth_a": "None",
       "class": "back",
       "answer": "2"
     },
@@ -59,6 +59,16 @@
       "forth_a": "64",
       "class": "bottom",
       "answer": "6"
+    },
+    "question7": {
+      "number": "7",
+      "question": "7",
+      "first_a": "71",
+      "sec_a": "72",
+      "third_a": "73",
+      "forth_a": "74",
+      "class": "back",
+      "answer": "7"
     }
   }
 
