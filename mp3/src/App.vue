@@ -66,7 +66,8 @@ export default {
 
         document.getElementById('2').style.display = 'block'
         setTimeout(function() {
-        document.getElementById('12').style.display = 'block'
+          document.getElementById('12').style.display = 'block'
+          self.string = ""
         }, 15000);
       }
   },
@@ -319,6 +320,7 @@ export default {
   text-transform: uppercase;
 	font-size: 30px;
 	letter-spacing: 0.1em;
+  white-space: nowrap;
 }
 @media only screen and (max-width : 768px) {
 	.demo-1 .main-title {
