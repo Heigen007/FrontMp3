@@ -11,6 +11,8 @@
 
 <script>
 import box from "@/components/Box.vue"
+import * as PIXI from 'pixi.js'
+
 // import * as THREE from "../js/three/build/three.js"
 // import * as BAS from 'three-bas'
 // import gsap from "gsap";
